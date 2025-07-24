@@ -17,14 +17,14 @@ public class Item {
     private String title;
 
     @Column(nullable = false)
-    private Double price;
+    private double price;
 
     @Column(nullable = false)
-    private Integer stock;
+    private int stock;
 
     public Item() {}
 
-    public Item(String author, String title, Double price, Integer stock) {
+    public Item(String author, String title, double price, int stock) {
         this.author = author;
         this.title = title;
         this.price = price;
@@ -32,5 +32,39 @@ public class Item {
     }
 
     // Getters and Setters
-    // ...
+    public Long getId() {
+        return id;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public void setStock(int stock) {
+        this.stock = stock;
+    }
 }

@@ -11,29 +11,57 @@ public class Bill {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "account_no", nullable = false)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "account_no")
     private Customer customer;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @ManyToOne(optional = false)
+    @JoinColumn(name = "user_id")
     private User user;
 
     @Column(nullable = false)
-    private Double totalAmount;
+    private double totalAmount;
 
     @Column(nullable = false)
     private LocalDateTime billDate;
 
     public Bill() {}
 
-    public Bill(Customer customer, User user, Double totalAmount, LocalDateTime billDate) {
-        this.customer = customer;
-        this.user = user;
-        this.totalAmount = totalAmount;
-        this.billDate = billDate;
+    // Getters
+    public Long getId() {
+        return id;
     }
 
-    // Getters and Setters
-    // ...
+    public Customer getCustomer() {
+        return customer;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public double getTotalAmount() {
+        return totalAmount;
+    }
+
+    public LocalDateTime getBillDate() {
+        return billDate;
+    }
+
+    // Setters
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setTotalAmount(double totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public void setBillDate(LocalDateTime billDate) {
+        this.billDate = billDate;
+    }
 }
