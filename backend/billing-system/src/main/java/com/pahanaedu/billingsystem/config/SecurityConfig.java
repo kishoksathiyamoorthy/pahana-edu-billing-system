@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
+@Configuration
 @EnableWebSecurity
 public class SecurityConfig {
 
